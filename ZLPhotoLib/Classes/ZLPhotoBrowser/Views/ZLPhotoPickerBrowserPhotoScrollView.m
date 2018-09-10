@@ -178,9 +178,27 @@
             //                }
             //            }];
             // 网络URL
-            [_photoImageView sd_setImageWithURL:photo.photoURL placeholderImage:thumbImage options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+
+
+//            [_photoImageView sd_setImageWithURL:photo.photoURL placeholderImage:thumbImage options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//                [self setProgress:(double)receivedSize / expectedSize];
+//            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                if (image) {
+//                    [self setProgress:1.0];
+//                }
+//                self.isLoadingDone = YES;
+//                if (image) {
+//                    photo.photoImage = image;
+//                    _photoImageView.image = image;
+//                    [weakSelf displayImage];
+//                }else{
+//                    [_photoImageView removeScaleBigTap];
+//                }
+//            }];
+
+            [_photoImageView sd_setImageWithURL:photo.photoURL placeholderImage:thumbImage options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
                 [self setProgress:(double)receivedSize / expectedSize];
-            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
                 if (image) {
                     [self setProgress:1.0];
                 }
@@ -193,7 +211,7 @@
                     [_photoImageView removeScaleBigTap];
                 }
             }];
-            
+
         }
         
     } else if (photo.photoImage){

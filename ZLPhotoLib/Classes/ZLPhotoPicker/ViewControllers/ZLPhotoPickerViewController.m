@@ -154,6 +154,12 @@
     self.groupVc.delegate = delegate;
 }
 
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    //返回白色
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - <UIAlertDelegate>
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
