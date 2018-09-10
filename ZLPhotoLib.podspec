@@ -7,11 +7,11 @@ s.license          = 'MIT'
 s.author           = { "zhangleo" => "zhangleowork@163.com" }
 s.source           = { :git => "https://github.com/MakeZL/ZLPhotoLib.git", :tag => s.version.to_s }
 
-s.platform         = :ios, '6.0'
+s.platform         = :ios, '9.0'
 s.requires_arc     = true
 
 s.frameworks       = 'AssetsLibrary' , 'AVFoundation', 'MediaPlayer'
-s.source_files     = 'ZLPhotoLib/Classes/*'
+s.source_files     = 'ZLPhotoLib/Classes/**/*'
 s.resource         = "ZLPhotoLib/ZLPhotoLib.bundle"
 
 end
